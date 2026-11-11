@@ -1,0 +1,16 @@
+{
+  "name": "emv-tlv-lab-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "build": "esbuild src/main.ts --bundle --minify --format=esm --outfile=dist/app.js && cp index.html style.css dist/"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.5",
+    "typescript": "5.8.3",
+    "@types/node": "22.15.30"
+  }
+}

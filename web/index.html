@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMV TLV Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>EMV TLV Lab</h1>
+    <p class="lede">Paste EMV TLV data, such as ISO 8583 field 55 or a card response, to see every tag with TVR, TSI, AIP, CVM and cryptogram values explained. Decoding runs in your browser; nothing is sent anywhere.</p>
+    <label for="input">TLV hex</label>
+    <textarea id="input" rows="5" spellcheck="false" placeholder="9F2701809505000000800..."></textarea>
+    <div class="controls">
+      <button id="sample" type="button">Load sample</button>
+      <label class="check"><input id="mask" type="checkbox" checked> Mask card data</label>
+    </div>
+    <p id="error" role="alert"></p>
+    <table>
+      <thead><tr><th>Tag</th><th>Name</th><th>Len</th><th>Value and meaning</th></tr></thead>
+      <tbody id="output"></tbody>
+    </table>
+    <footer>Use test cards only. Source on <a href="https://github.com/dobdaniel1/emv-tlv-lab">GitHub</a>.</footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

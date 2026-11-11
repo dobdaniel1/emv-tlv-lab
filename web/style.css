@@ -1,0 +1,38 @@
+:root {
+  --bg: #f7f7f5; --fg: #1c1c1a; --muted: #5f5f5a; --line: #deded8; --panel: #ffffff;
+  --accent: #1f5fbf; --error: #b42318;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #161615; --fg: #ececea; --muted: #a3a39d; --line: #33332f; --panel: #1f1f1d; --accent: #7aa7ff; --error: #ff8a80; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); }
+main { max-width: 64rem; margin: 0 auto; padding: 2rem 1rem 3rem; }
+h1 { margin: 0 0 .5rem; font-size: 1.75rem; }
+.lede { color: var(--muted); max-width: 46rem; line-height: 1.5; }
+label { display: block; font-weight: 600; margin: 1.25rem 0 .4rem; }
+textarea {
+  width: 100%; padding: .75rem; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--panel); color: var(--fg); font: .9rem ui-monospace, Menlo, monospace; word-break: break-all;
+}
+.controls { display: flex; gap: 1rem; align-items: center; margin-top: .75rem; flex-wrap: wrap; }
+button {
+  padding: .5rem 1rem; border: 1px solid var(--accent); border-radius: 6px;
+  background: transparent; color: var(--accent); font: inherit; cursor: pointer;
+}
+.check { display: flex; gap: .4rem; align-items: center; font-weight: 400; margin: 0; }
+#error { color: var(--error); min-height: 1.25rem; }
+table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); }
+th, td { text-align: left; vertical-align: top; padding: .5rem .75rem; border-bottom: 1px solid var(--line); }
+th { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.tag, .value { font-family: ui-monospace, Menlo, monospace; font-size: .85rem; }
+.value { word-break: break-all; }
+.num { text-align: right; }
+ul { margin: .4rem 0 0; padding-left: 1.1rem; font-family: system-ui, sans-serif; color: var(--muted); }
+footer { margin-top: 2rem; color: var(--muted); font-size: .85rem; }
+a { color: var(--accent); }
+@media (max-width: 40rem) {
+  th:nth-child(3), td:nth-child(3) { display: none; }
+  th, td { padding: .4rem; }
+}

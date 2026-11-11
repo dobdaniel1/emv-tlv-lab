@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "emv-tlv-lab"
+version = "0.1.0"
+description = "Decode EMV BER-TLV data and explain TVR, TSI, AIP and CVM values"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Daniel Olawepo" }]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "hypothesis>=6", "ruff>=0.6"]
+
+[project.scripts]
+emv-tlv = "emv_tlv.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+emv_tlv = ["emv.json"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=emv_tlv --cov-report=term-missing --cov-fail-under=90"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
